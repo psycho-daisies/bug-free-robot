@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
-
 # =========================
 # Debian Bootstrap Script
 # =========================
 # Usage (from fresh install):
-#   curl -fsSL https://raw.githubusercontent.com/<you>/<repo>/main/debian-bootstrap.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/psycho-daisies/bug-free-robot/main/debian-bootstrap.sh | bash
 #
 # Flags (set before the pipe or export in shell):
 #   INSTALL_KDE=true|false           (default: true)
@@ -16,8 +15,8 @@ set -euo pipefail
 #   SET_SDDM_DEFAULT=true|false      (default: true when KDE is installed)
 #   NONINTERACTIVE=true|false        (default: true; uses apt -y)
 #
-# Example:
-#   INSTALL_KDE=false INSTALL_DOCKER=true curl -fsSL https://.../debian-bootstrap.sh | bash
+# Example: skip KDE, include Docker
+#   INSTALL_KDE=false INSTALL_DOCKER=true curl -fsSL https://raw.githubusercontent.com/psycho-daisies/bug-free-robot/main/debian-bootstrap.sh | bash
 
 # -------------------------
 # Defaults
