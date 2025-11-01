@@ -174,26 +174,27 @@ install_node_nvm() {
 
 install_docker() {
   [[ "${INSTALL_DOCKER}" == "true" ]] || { log "Skipping Docker."; return; }
-  log "Installing Docker Engine + Compose from Docker’s repo…"
-  local ARCH; ARCH="$(dpkg --print-architecture)"
-  local CODENAME; CODENAME="$(codename)"
+  echo "Skipping docker"
+  # log "Installing Docker Engine + Compose from Docker’s repo…"
+  # local ARCH; ARCH="$(dpkg --print-architecture)"
+  # local CODENAME; CODENAME="$(codename)"
 
-  apt_install \
-    ca-certificates curl gnupg
+  # apt_install \
+  #   ca-certificates curl gnupg
 
-  install -m 0755 -d /etc/apt/keyrings
-  curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor | ${SUDO} tee /etc/apt/keyrings/docker.gpg >/dev/null
-  ${SUDO} chmod a+r /etc/apt/keyrings/docker.gpg
+  # install -m 0755 -d /etc/apt/keyrings
+  # curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor | ${SUDO} tee /etc/apt/keyrings/docker.gpg >/dev/null
+  # ${SUDO} chmod a+r /etc/apt/keyrings/docker.gpg
 
-  echo "deb [arch=${ARCH} signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian ${CODENAME} stable" | ${SUDO} tee /etc/apt/sources.list.d/docker.list > /dev/null
+  # echo "deb [arch=${ARCH} signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian ${CODENAME} stable" | ${SUDO} tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-  apt_update
-  apt_install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  # apt_update
+  # apt_install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-  # Add current user to docker group
-  local U="${SUDO_USER:-$USER}"
-  ${SUDO} usermod -aG docker "$U" || true
-  log "Docker installed. You may need to log out and back in for docker group to take effect."
+  # # Add current user to docker group
+  # local U="${SUDO_USER:-$USER}"
+  # ${SUDO} usermod -aG docker "$U" || true
+  # log "Docker installed. You may need to log out and back in for docker group to take effect."
 }
 
 post_tweaks() {
