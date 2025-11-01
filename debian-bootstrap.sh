@@ -22,7 +22,7 @@ set -euo pipefail
 # -------------------------
 # Defaults
 # -------------------------
-INSTALL_KDE="${INSTALL_KDE:-true}"
+INSTALL_KDE="${INSTALL_KDE:-false}"
 INSTALL_VSCODE="${INSTALL_VSCODE:-true}"
 INSTALL_FLATPAK="${INSTALL_FLATPAK:-true}"
 INSTALL_DOCKER="${INSTALL_DOCKER:-false}"
