@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+
 # =========================
 # Debian Bootstrap Script
 # =========================
