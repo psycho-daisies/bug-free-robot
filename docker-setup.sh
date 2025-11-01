@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Docker Engine + Compose on Debian (official apt repo, non-root usage)
+# Docker Engine + Compose on Debian 12 (official apt repo, non-root usage)
 # Usage:
 #   curl -fsSL https://raw.githubusercontent.com/<you>/<repo>/main/docker-setup.sh | bash
 
