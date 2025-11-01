@@ -237,7 +237,7 @@ main() {
   install_docker
   post_tweaks
 
-  log "Done! Reboot if you installed a new desktop or display manager."
+  log "Setup Done! Reboot if you installed a new desktop or display manager."
 }
 
 main "$@"
